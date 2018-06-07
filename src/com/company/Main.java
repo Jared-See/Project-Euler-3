@@ -10,19 +10,20 @@ public class Main {
 
 
     public static void factorize(BigInteger n){
-        int factorA = 0;
-        int factorB = 0;
-        BigInteger Checker = new BigInteger("2");                    //A Variable to decide if the number is even because you can't direct compare a int to a BigInt, size matters
-        int checkerPartTwo = n.compareTo(Checker);
+        BigInteger factorA = new BigInteger("0");
+        BigInteger factorB = new BigInteger("0");
+        BigInteger checker = new BigInteger("2");                    //A Variable to decide if the number is even because you can't direct compare a int to a BigInt, size matters
+        int checkerPartTwo = n.compareTo(checker);
 
         if (checkerPartTwo == 0){                                       //If number is even
-            factorA = 2;
-            factorB = n.divide(2);
+            factorA.equals(2);                                          //Factor a is 2 because of factorBs value
+            factorB = n.divide(factorA);                                //Factor B is half the original number
         }else{                                                          //If number is odd
-            BigInteger halfLine = new BigInteger(n.divide(/* Some representation of the number 2*/)) ;   //Only variables that are even will be factors greater than half of them, this case is only for odd integers
-            int smallestFactorOdd = 3;
+            BigInteger halfLine = new BigInteger("0") ;             //Acts as a makeshift line of code to declare a variable which will have its actual value assigned on the nex line
+            halfLine.equals(n.divide(checker));                        //No odd number will have a pair of factors where one of them is greater then half of the input, "n"
+            BigInteger smallestFactorOdd = new BigInteger("3");
 
-            while (smallestFactorOdd < halfLine){                       //Until you've found the smallest factor for add variables
+            while (smallestFactorOdd.compareTo(halfLine) == -1){                       //Until you've found the smallest factor for add variables
                 if (n % smallestFactorOdd == 0){                        //If smallestFactorOdd is a factor of n
                     factorA = smallestFactorOdd;
                     factorB = n/smallestFactorOdd;
