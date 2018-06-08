@@ -19,11 +19,11 @@ public class Main {
             factorA.equals(2);                                          //Factor a is 2 because of factorBs value
             factorB = n.divide(factorA);                                //Factor B is half the original number
         }else{                                                          //If number is odd
-            BigInteger halfLine = new BigInteger("0") ;             //Acts as a makeshift line of code to declare a variable which will have its actual value assigned on the nex line
-            halfLine.equals(n.divide(checker));                        //No odd number will have a pair of factors where one of them is greater then half of the input, "n"
-            BigInteger smallestFactorOdd = new BigInteger("3");
+            BigInteger halfLine = new BigInteger("0") ;              //Acts as a makeshift line of code to declare a variable which will have its actual value assigned on the nex line
+            halfLine.equals(n.divide(checker));                         //No odd number will have a pair of factors where one of them is greater then half of the input, "n"
+            BigInteger smallestFactorOdd = new BigInteger("3");      //3 is the smallest number you can have that will go be a factor of n that's odd and not 1 and n
 
-            while (smallestFactorOdd.compareTo(halfLine) == -1){                       //Until you've found the smallest factor for add variables
+            while (smallestFactorOdd.compareTo(halfLine) == -1){        //Until you've found the smallest factor for add variables
                 if (n % smallestFactorOdd == 0){                        //If smallestFactorOdd is a factor of n
                     factorA = smallestFactorOdd;
                     factorB = n/smallestFactorOdd;
@@ -33,7 +33,7 @@ public class Main {
                 }
             }
 
-            if (smallestFactorOdd > halfLine){                          //If the number isn't even and has no numbers that multiply together that are natural
+            if (smallestFactorOdd.compareTo(halfLine) == 1){             //If the number isn't even and has no numbers that multiply together that are natural
                 System.out.println("Prime Number");                     //If the above is true then the number is prime
             }
         }
